@@ -2477,9 +2477,10 @@ __webpack_require__.r(__webpack_exports__);
 var btn = document.querySelector('#btn');
 var menu = document.querySelector('#menu');
 btn.addEventListener('click', function () {
-  console.log('Has hecho click');
   menu.classList.toggle('hidden');
 });
+
+function abrirModal() {}
 
 /***/ }),
 

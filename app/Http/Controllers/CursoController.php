@@ -16,7 +16,8 @@ class CursoController extends Controller
     public function index()
     {
         //de esta manera recogemos todos los registros
-        $posts = Post::all();
+        /*$posts = Post::all();*/
+        $posts = Post::paginate(5);
 
         //ahora retornamos la vista pasandole la variable
        return view('blog.blog',compact('posts'));

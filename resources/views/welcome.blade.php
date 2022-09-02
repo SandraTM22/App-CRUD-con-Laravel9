@@ -1,46 +1,33 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto Laravel</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css')}}">
-</head>
-<body>
-<header>
-    <nav class="flex items-center justify-around flex-wrap bg-teal-500 p-6">
-        <div class="flex items-center text-white mr-6">
-            <span class="font-semibold text-xl tracking-tight">Example LARAVEL</span>
-        </div>
-        <div class="block lg:hidden">
-            <button id="btn" class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-            </button>
-        </div>
-        <div id="menu" class="w-full block lg:flex lg:items-center lg:w-auto hidden">
-            <div class="text-sm lg:flex-grow">
-                <a href="{{route('home')}}" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-                    Home
-                </a>
-                <a href="{{route('about')}}" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-                    About us
-                </a>
-                <a href="{{route('Cursos.index')}}" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-                    Blog
-                </a>
-                <a href="{{route('contact')}}" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-                    Contact
-                </a>
-            </div>
-        </div>
-    </nav>
+@extends('layaut')
+@section('content')
+    <h2 class=" mx-auto text-xl border-b-2 border-r-sky-900 mb-2 p-2 italic">Bienvenido a mi proyecto de LARAVEL 9</h2>
 
-</header>
-<div class="mx-auto p-6 ">
-    @yield('content')
-</div>
+    <div class="mx-auto px-6 mt-6 mb-20">
+        <p>En este proyecto desarrollo una aplicación de un blog, el cual podemos tanto crear, editar y borrar un post. Estos post se encuentran en una base de datos.Para ello he utilizado las siguientes herramientas y tecnologías: </p>
+        <ul class="list-disc ml-12 mt-4 ">
+            <li>PHPStorm</li>
+            <li>Laravel 9</li>
+            <li>Docker</li>
+            <li>MySQL</li>
+            <li>TailwindCss</li>
+            <li>AlpineJS</li>
+        </ul>
+        <br>
+        <div class="flex flex-col space-y-4">
+            <p>Para comenzar debemos tener Docker Compose instalado ( <a class="font-medium text-blue-900" href="https://docs.docker.com/compose/install/">Install Docker Compose</a>).
+                Y seguiremos las instrucciones que nos dá la documentacion de Laravel. <a class="font-medium text-blue-900" href="https://laravel.com/docs/9.x">Guia Laravel</a>. </p>
+            <code class="p-2 m-1 bg-gray-100">curl -s https://laravel.build/example-app | bash</code>
+            <p>Con este comando crearemos nuestra carpeta llamada "example-app" con los directorios, accedemos a ella a través de consola y 'levantamos' el contenedor con el comando:</p>
+            <code class="p-2 m-1 bg-gray-100">./vendor/bin/sail up</code>
+            <p>Ya estariamos listos para seguir con el proyecto, creando los controller, views y models.</p><br>
+            <p>Si queremos introducir base de datos tenemos que trabajar con los Models, Seeder y Factory, es importante tener la base de datos ya creada y las variables de entorno bien definidas.</p>
+            <br>
+            <p>Para introducir CSSse ha utilizado TailwindCSS, se ha instalado utilizando la guia para Laravel Mix
+                <a class="font-medium text-blue-900" href="https://tailwindcss.com/docs/guides/laravel#mix">TailwindCSS</a>. Y para JS se ha utilizado
+                <a class="font-medium text-blue-900" href="https://alpinejs.dev/essentials/installation">AlpineJS</a>.  </p>
 
-</body>
-<script src="{{ asset('js/app.js')}}"></script>
-</html>
+        </div>
+
+
+    </div>
+@endsection
